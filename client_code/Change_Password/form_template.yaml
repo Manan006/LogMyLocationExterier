@@ -23,7 +23,7 @@ components:
     name: password
     layout_properties: {grid_position: 'FMFKQF,OWJDCQ RTFNSG,MCKFMP'}
   - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Enter Old Password,
+    properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Enter Old Password,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '', bold: false, underline: false}
@@ -31,7 +31,7 @@ components:
     layout_properties: {grid_position: 'FMFKQF,CJXIZU GQCHKQ,RLXVKV'}
     event_bindings: {pressed_enter: username_input_pressed_enter}
   - type: TextBox
-    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Enter New Password,
+    properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Enter New Password,
       border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '', bold: false, underline: false}

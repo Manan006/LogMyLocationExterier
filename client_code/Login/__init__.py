@@ -25,11 +25,16 @@ class Login(LoginTemplate):
     else:
       self.added_warning=False
       self.parent.parent.login.text="Sign Out"
-      self.parent.parent.change_password.visible=Tue
+      self.parent.parent.change_password.visible=True
       self.content_panel.clear()
       self.add_component(Home())
 
   def signup_link_click(self, **event_args):
     self.content_panel.clear()
     self.add_component(Signup())
+
+  def password_input_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    pass
+
 

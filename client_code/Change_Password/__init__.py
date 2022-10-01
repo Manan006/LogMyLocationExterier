@@ -24,3 +24,8 @@ class Change_Password(Change_PasswordTemplate):
     else:
       self.content_panel.clear()
       self.add_component(Home())
+
+  def username_input_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    pass
+
