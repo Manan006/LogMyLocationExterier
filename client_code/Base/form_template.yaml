@@ -29,6 +29,13 @@ components:
       icon: 'fa:globe'}
     name: locations
     layout_properties: {}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: false, text: Change Password, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:user-secret'}
+    name: change_password
+    layout_properties: {}
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
     text: Home, font_size: null, font: '', spacing_above: small, icon_align: left,

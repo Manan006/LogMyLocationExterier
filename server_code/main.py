@@ -55,8 +55,9 @@ def signup(username,password):
   url = app_url+f"/create_user?username={username}&password={password}"
   print(url)
   try:
-    response = http.request(method="GET",url=url)
+    response = http.request(method="PUT",url=url)
   except http.HttpErrorStatus as response:
+    print(response.status)
     return False
   else:
     return True

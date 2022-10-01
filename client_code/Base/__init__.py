@@ -13,7 +13,7 @@ class Base(BaseTemplate):
     self.init_components(**properties)
     if anvil.server.call('get_session')!=None:
       self.login.text="Sign Out"
-
+      self.change_password.visible=True
     self.content_panel.add_component(Home())
     # Any code you write here will run when the form opens.
 
@@ -22,6 +22,7 @@ class Base(BaseTemplate):
     if anvil.server.call('get_session')!=None:
       anvil.server.call('signout')
       self.login.text="Log in"
+      self.change_password.visible=False
     self.content_panel.clear()
     self.content_panel.add_component(Login())
 
