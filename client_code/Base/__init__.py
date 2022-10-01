@@ -5,7 +5,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Home import Home
 from ..Login import Login
-
+app_url = "http://139.84.135.123:8000"
 class Base(BaseTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
