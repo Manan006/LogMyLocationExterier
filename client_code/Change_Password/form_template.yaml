@@ -1,0 +1,95 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {grid_position: 'UXEOMC,WVCHXJ'}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Old Password, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:user'}
+    name: username
+    layout_properties: {grid_position: 'FMFKQF,OWJDCQ FOVIGQ,PXMNSD'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'New Password:
+
+        ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: 'fa:user-secret'}
+    name: password
+    layout_properties: {grid_position: 'FMFKQF,OWJDCQ RTFNSG,MCKFMP'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Enter Old Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: old_pass
+    layout_properties: {grid_position: 'FMFKQF,CJXIZU GQCHKQ,RLXVKV'}
+    event_bindings: {pressed_enter: username_input_pressed_enter}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Enter New Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: new_pass
+    layout_properties: {grid_position: 'FMFKQF,CJXIZU SLTUPK,YLWTZO'}
+    event_bindings: {pressed_enter: password_input_pressed_enter}
+  event_bindings: {refreshing_data_bindings: content_panel_refreshing_data_bindings}
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Change Password, font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: 'fa:sign-in'}
+  name: change_pass
+  layout_properties: {grid_position: 'DSRZEH,AFVBGV'}
+  event_bindings: {click: change_password}
+is_package: true
+component:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {grid_position: 'UXEOMC,WVCHXJ'}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Enter Desired Username (must be unique):', font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: 'fa:user'}
+    name: username
+    layout_properties: {grid_position: 'FMFKQF,OWJDCQ'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Enter Username,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: username_input
+    layout_properties: {grid_position: 'FMFKQF,CJXIZU'}
+    event_bindings: {pressed_enter: username_input_pressed_enter}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Password:
+
+        ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: 'fa:user-secret'}
+    name: password
+    layout_properties: {grid_position: 'AFMUYI,TBFSYS'}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Enter Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: password_input
+    layout_properties: {grid_position: 'AFMUYI,CPUUVA'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Signup, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:sign-in'}
+    name: signup_btn
+    layout_properties: {grid_position: 'QNOUZM,EPPXDE'}
+    event_bindings: {click: signup_btn_click}
+  event_bindings: {refreshing_data_bindings: content_panel_refreshing_data_bindings}

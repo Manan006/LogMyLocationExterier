@@ -22,10 +22,10 @@ class Login(LoginTemplate):
       if not self.added_warning:
         self.add_component(Invalid_Login())
         self.added_warning=True
-
     else:
+      self.added_warning=False
       self.parent.parent.login.text="Sign Out"
-      self.parent.parent.change_password.visible=False
+      self.parent.parent.change_password.visible=Tue
       self.content_panel.clear()
       self.add_component(Home())
 

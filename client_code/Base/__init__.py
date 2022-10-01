@@ -6,6 +6,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..Home import Home
 from ..Login import Login
+from ..Change_Password import Change_Password
 app_url = "http://139.84.135.123:8000"
 class Base(BaseTemplate):
   def __init__(self, **properties):
@@ -25,4 +26,16 @@ class Base(BaseTemplate):
       self.change_password.visible=False
     self.content_panel.clear()
     self.content_panel.add_component(Login())
+
+  def locations_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    pass
+
+  def change_password_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.content_panel.clear()
+    self.add_component(Change_Password())
+
+
+
 

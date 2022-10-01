@@ -61,3 +61,15 @@ def signup(username,password):
     return False
   else:
     return True
+
+@anvil.server.callable
+def change_password(old,new):
+  url = app_url+f"/change_password?sessionid={anvil.server.cookies.local['sessionid']}&old_password={old}&new_password={new}"
+  print(url)
+  try:
+    response = http.request(method="POST",url=url)
+  except http.HttpErrorStatus as response:
+    print(response.status)
+    return False
+  else:
+    return True
