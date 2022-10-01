@@ -5,7 +5,8 @@ unique_ids:
     Invalid_Login: '1664635035334683660798024.6088'
     Login: '1664634450639535157050279.67883'
   modules: {}
-  server_modules: {}
+  server_modules:
+    ServerModule1: '1664638961096755516772579.0356'
   assets:
     standard-page.html: DJFOMFT6T3Q22A6QTVWS32CKMIZIOHFI
     theme.css: JFQISBMQYRPHJMZINZPM63BUDBQFWDEM

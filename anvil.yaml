@@ -12,6 +12,7 @@ runtime_options:
   client_version: '3'
   server_version: python3-full
   server_spec: {base: python310-minimal}
+  server_spec_disabled: {base: python310-minimal, requirements: requests}
 startup_form: null
 db_schema: {}
 renamed: true
