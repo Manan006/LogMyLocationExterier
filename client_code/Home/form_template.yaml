@@ -1,0 +1,18 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {grid_position: 'CVMDQW,PUXDOZ'}
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: I have no idea what to put here. Pls suggest something!,
+      font_size: 50, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: true, underline: true, icon: ''}
+    name: placeholder
+    layout_properties: {grid_position: 'SXUHRU,ZFVLBJ'}
+is_package: true
+component: []
