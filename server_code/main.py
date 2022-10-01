@@ -35,3 +35,18 @@ def login(username,password):
 @anvil.server.callable
 def get_session():
   return anvil.server.cookies.local.get("sessionid", None)
+  
+@anvil.server.callable
+def signout():
+  url = app_url+f"/signout?sessionid={anvil.server.cookies.local['sessionid']}"
+  print(url)
+  try:
+    response = http.request(method="POST",url=url)
+  except http.HttpErrorStatus as response:
+    return False
+  else:
+    anvil.server.cookies.local.clear()
+    return True
+
+
+@anvil.server

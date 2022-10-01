@@ -11,10 +11,17 @@ class Base(BaseTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    if anvil.server.call('get_session')!=None:
+      self.login.text="Sign Out"
+
     self.content_panel.add_component(Home())
     # Any code you write here will run when the form opens.
 
   def login_click(self, **event_args):
-    """This method is called when the link is clicked"""
+    print(anvil.server.call('get_session'))
+    if anvil.server.call('get_session')!=None:
+      anvil.server.call('signout')
+      self.login.text="Log in"
     self.content_panel.clear()
     self.content_panel.add_component(Login())
+
