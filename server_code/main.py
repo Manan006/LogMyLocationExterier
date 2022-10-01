@@ -43,10 +43,20 @@ def signout():
   try:
     response = http.request(method="POST",url=url)
   except http.HttpErrorStatus as response:
+    anvil.server.cookies.local.clear()
     return False
   else:
     anvil.server.cookies.local.clear()
     return True
 
 
-@anvil.server
+@anvil.server.callable
+def signup(username,password):
+  url = app_url+f"/create_user?username={username}&password={password}"
+  print(url)
+  try:
+    response = http.request(method="GET",url=url)
+  except http.HttpErrorStatus as response:
+    return False
+  else:
+    return True

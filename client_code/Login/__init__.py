@@ -11,6 +11,7 @@ class Login(LoginTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.added_warning=False
 
     # Any code you write here will run when the form opens.
 
@@ -18,13 +19,16 @@ class Login(LoginTemplate):
     """This method is called when the button is clicked"""
     data = anvil.server.call("login",username=self.username_input.text,password=self.password_input.text)
     if not data:
-      self.add_component(Invalid_Login())
+      if not self.added_warning:
+        self.add_component(Invalid_Login())
+        self.added_warning=True
+
     else:
       self.parent.parent.login.text="Sign Out"
       self.content_panel.clear()
       self.add_component(Home())
 
   def signup_link_click(self, **event_args):
-  self.content_panel.clear()
-  self.add_component(Signup())
+    self.content_panel.clear()
+    self.add_component(Signup())
 
