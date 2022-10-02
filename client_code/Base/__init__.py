@@ -34,6 +34,8 @@ class Base(BaseTemplate):
     self.content_panel.clear()
     locations=anvil.server.call('get_location')
     for item in locations[1]:
+      item=json.loads(item[0])
+      print(item)
       self.add_component(location(lat=item['lat'],lon=item['lon'],time=item['time']))
     
   def change_password_click(self, **event_args):
