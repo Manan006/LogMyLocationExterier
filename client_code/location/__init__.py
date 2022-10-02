@@ -7,11 +7,11 @@ from anvil.tables import app_tables
 import json
 
 class location(locationTemplate):
-  def __init__(self,lat,lon,time,**properties):
+  def __init__(self,lat,lon,time_,**properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.coords={"lat":lat,"lon":lon}
-    self.time = str(time)
+    self.time__.text = time_
     # Any code you write here will run when the form opens.
 
   def location_click(self, **event_args):

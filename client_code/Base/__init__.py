@@ -9,6 +9,7 @@ from ..Login import Login
 from ..Change_Password import Change_Password
 from ..Locations import Locations
 from ..location import location
+import json
 app_url = "http://139.84.135.123:8000"
 class Base(BaseTemplate):
   def __init__(self, **properties):
@@ -34,9 +35,11 @@ class Base(BaseTemplate):
     self.content_panel.clear()
     locations=anvil.server.call('get_location')
     for item in locations[1]:
-      item=json.loads(item[0])
       print(item)
-      self.add_component(location(lat=item['lat'],lon=item['lon'],time=item['time']))
+      item_=json.loads(item[0].replace("'",'"'))
+      print(item_)
+      print(str(item[1]))
+      self.add_component(location(lat=item_['lat'],lon=item_['lon'],time_=str(item[1])))
     
   def change_password_click(self, **event_args):
     """This method is called when the link is clicked"""
