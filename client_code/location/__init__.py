@@ -11,7 +11,7 @@ class location(locationTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.coords={"lat":lat,"lon":lon}
-    self.time__.text = time_
+    self.time__.content = time_
     # Any code you write here will run when the form opens.
 
   def location_click(self, **event_args):
