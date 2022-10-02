@@ -7,6 +7,8 @@ from anvil.tables import app_tables
 from ..Home import Home
 from ..Login import Login
 from ..Change_Password import Change_Password
+from ..Locations import Locations
+from ..location import location
 app_url = "http://139.84.135.123:8000"
 class Base(BaseTemplate):
   def __init__(self, **properties):
@@ -29,8 +31,11 @@ class Base(BaseTemplate):
 
   def locations_click(self, **event_args):
     """This method is called when the link is clicked"""
-    pass
-
+    self.content_panel.clear()
+    locations=anvil.server.call('get_location')
+    for item in locations[1]:
+      self.add_component(location(lat=item['lat'],lon=item['lon'],time=item['time']))
+    
   def change_password_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()

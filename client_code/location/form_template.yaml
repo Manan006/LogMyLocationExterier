@@ -1,0 +1,22 @@
+properties:
+- {name: time, type: string, default_value: '', default_binding_prop: false, description: Date and time}
+- {name: coords, type: object, default_binding_prop: false, description: 'Dict containing
+    the coords
+
+    '}
+is_package: true
+component: []
+custom_component: true
+components:
+- type: GoogleMap
+  properties: {}
+  name: location_
+  layout_properties: {grid_position: 'JSCPHL,ZZKWNJ'}
+  event_bindings: {bounds_changed: location_click}
+- type: RichText
+  properties: {}
+  name: time
+  layout_properties: {grid_position: 'JSCPHL,CWIHRD'}
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"ZZKWNJ":30,"CWIHRD":30}'}

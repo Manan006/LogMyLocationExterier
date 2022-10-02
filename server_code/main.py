@@ -73,3 +73,15 @@ def change_password(old,new):
     return False
   else:
     return True
+
+@anvil.server.callable
+def get_location():
+  url = app_url+f"/get_location?sessionid={anvil.server.cookies.local['sessionid']}"
+  print(url)
+  try:
+    response = http.request(method="GET",url=url)
+  except http.HttpErrorStatus as response:
+    print(response.status)
+    return (False,())
+  else:
+    return (True,json.loads(response.get_bytes().decode())["location"])
